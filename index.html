@@ -1,58 +1,189 @@
 <!doctype html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="回答 10 個旅行情境，測看看自己是否適合成為這趟旅程的旅伴。" />
-    <title>旅伴合拍度測試</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="shell">
-      <header class="topbar">
-        <a class="brand" href="#top" aria-label="回到首頁"><span class="brand-mark">✦</span> TRIP TEST</a>
-        <div class="top-meta"><span class="status-dot"></span> FRIEND COMPATIBILITY LAB</div>
-      </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="回答 10 個旅行情境，測看看自己是否適合成為這趟旅程的旅伴。" />
+        <title>旅伴合拍度測試</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="shell">
+            <header class="topbar">
+                <a class="brand" href="#top" aria-label="回到首頁"><span class="brand-mark">✦</span> TRIP TEST</a>
+                <div class="top-meta"><span class="status-dot"></span> FRIEND COMPATIBILITY LAB</div>
+            </header>
 
-      <main id="top">
-        <section class="intro" id="intro-screen">
-          <div class="eyebrow">TRAVEL FIELD TEST / 001</div>
-          <h1>你適合一起<br /><em>去旅行嗎？</em></h1>
-          <p class="intro-copy">回答 13 個旅行情境，測看看自己是否適合加入這趟旅程。</p>
-          <div class="intro-grid">
-            <div class="note-card" style="grid-column:1 / -1;transform:rotate(0)"><span>TRAVEL STYLE</span><p>散策、轉乘與旅伴默契。</p><p style="font-size:13px;line-height:1.6;margin-top:14px;font-weight:500">請回答你心目中最理想、最舒服的旅行方式。不是追求完美，而是看看彼此是否適合。</p></div>
-          </div>
-          <button class="primary-btn" id="start-btn">開始回答 <span>→</span></button>
-          <p class="fine-print">約 2 分鐘 · 結果僅供友情參考</p>
-        </section>
+            <main id="top">
+                <section class="intro" id="intro-screen">
+                    <div class="eyebrow">TRAVEL FIELD TEST / 001</div>
+                    <h1>你適合一起<br /><em>去旅行嗎？</em></h1>
+                    <p class="intro-copy">回答 13 個旅行情境，測看看自己是否適合加入這趟旅程。</p>
+                    <div class="intro-grid">
+                        <div class="note-card" style="grid-column: 1 / -1; transform: rotate(0)">
+                            <span>TRAVEL STYLE</span>
+                            <p>散策、轉乘與旅伴默契。</p>
+                            <p style="font-size: 13px; line-height: 1.6; margin-top: 14px; font-weight: 500">
+                                請回答你心目中最理想、最舒服的旅行方式。不是追求完美，而是看看彼此是否適合。
+                            </p>
+                        </div>
+                    </div>
+                    <button class="primary-btn" id="start-btn">開始回答 <span>→</span></button>
+                    <p class="fine-print">約 2 分鐘 · 結果僅供友情參考</p>
+                </section>
 
-        <section class="quiz hidden" id="quiz-screen" aria-live="polite">
-          <div class="quiz-top"><span class="eyebrow" id="question-number">TRAVEL TEST · QUESTION 01 / 13</span><span class="progress-text" id="progress-text">0%</span></div>
-          <div class="progress-bar"><span id="progress-bar-fill"></span></div>
-          <div class="question-wrap">
-            <div class="question-tag" id="question-tag">TRAVEL RHYTHM</div>
-            <h2 id="question-title">你們的第一天通常會怎麼開始？</h2>
-            <p class="question-hint" id="question-hint">選最接近你們真實相處的那一個。</p>
-            <div class="answers" id="answers"></div>
-          </div>
-          <div class="quiz-footer"><span class="keyboard-hint">TIP · 可以用數字鍵 1–4 選擇</span><button class="back-btn" id="back-btn">← 上一題</button></div>
-        </section>
+                <section class="quiz hidden" id="quiz-screen" aria-live="polite">
+                    <div class="quiz-top">
+                        <span class="eyebrow" id="question-number">TRAVEL TEST · QUESTION 01 / 13</span><span class="progress-text" id="progress-text">0%</span>
+                    </div>
+                    <div class="progress-bar"><span id="progress-bar-fill"></span></div>
+                    <div class="question-wrap">
+                        <div class="question-tag" id="question-tag">TRAVEL RHYTHM</div>
+                        <h2 id="question-title">你們的第一天通常會怎麼開始？</h2>
+                        <p class="question-hint" id="question-hint">選最接近你們真實相處的那一個。</p>
+                        <div class="answers" id="answers"></div>
+                    </div>
+                    <div class="quiz-footer">
+                        <span class="keyboard-hint">TIP · 可以用數字鍵 1–4 選擇</span>
+                        <div class="quiz-navigation">
+                            <button class="back-btn" id="back-btn">← 回首頁</button><button class="primary-btn" id="next-btn" disabled>下一題 →</button>
+                        </div>
+                    </div>
+                </section>
 
-        <section class="result hidden" id="result-screen">
-          <div class="result-stamp">FIELD REPORT / COMPLETE</div>
-          <div class="result-score"><span class="score-label">TRIP COMPATIBILITY</span><strong id="score">86</strong><span class="score-unit">/ 100</span></div>
-          <div class="result-copy"><div class="result-kicker" id="result-kicker">THE GOLDEN DUO</div><h2 id="result-title">你們是旅行界的黃金搭檔。</h2><p id="result-description"></p><div id="attention-panel" style="margin-top:26px;border-top:1px solid var(--line);padding-top:20px"><div style="color:var(--coral);font:500 11px 'DM Mono',monospace;letter-spacing:.12em;margin-bottom:10px">DISCUSSION POINTS</div><ul id="attention-list" style="margin:0;padding-left:20px;color:#c6cad5;line-height:1.8"></ul></div></div>
-          <div class="result-details"><div><span>你們的偏好接近程度</span><strong id="detail-sync">大多數偏好一致</strong></div><div><span>比較適合的旅行方式</span><strong id="detail-trip">步調彈性的共同旅行</strong></div><div><span>出發前最需要先講好</span><strong id="detail-warning">分配規劃與住宿任務</strong></div></div>
-          <div class="result-actions"><button class="primary-btn" id="restart-btn">再測一次 <span>↻</span></button><button class="secondary-btn" id="share-btn">複製結果圖片</button></div>
-          <p class="fine-print" id="share-status">可以把這份結果分享給一起旅行的朋友。</p>
-        </section>
-      </main>
+                <section class="result hidden" id="result-screen">
+                    <div class="result-stamp">FIELD REPORT / COMPLETE</div>
+                    <div class="result-score">
+                        <span class="score-label">TRIP COMPATIBILITY</span><strong id="score">86</strong><span class="score-unit">/ 100</span>
+                    </div>
+                    <div class="result-copy">
+                        <div class="result-kicker" id="result-kicker">THE GOLDEN DUO</div>
+                        <h2 id="result-title">你們是旅行界的黃金搭檔。</h2>
+                        <p id="result-description"></p>
+                        <div id="attention-panel" style="margin-top: 26px; border-top: 1px solid var(--line); padding-top: 20px">
+                            <div
+                                style="
+                                    color: var(--coral);
+                                    font:
+                                        500 11px &quot;DM Mono&quot;,
+                                        monospace;
+                                    letter-spacing: 0.12em;
+                                    margin-bottom: 10px;
+                                "
+                            >
+                                DISCUSSION POINTS
+                            </div>
+                            <ul id="attention-list" style="margin: 0; padding-left: 20px; color: #c6cad5; line-height: 1.8"></ul>
+                        </div>
+                    </div>
+                    <div class="result-details">
+                        <div><span>你們的偏好接近程度</span><strong id="detail-sync">大多數偏好一致</strong></div>
+                        <div><span>比較適合的旅行方式</span><strong id="detail-trip">步調彈性的共同旅行</strong></div>
+                        <div><span>出發前最需要先講好</span><strong id="detail-warning">分配規劃與住宿任務</strong></div>
+                    </div>
+                    <section class="preference-comparison" aria-labelledby="preference-title">
+                        <h3 id="preference-title">逐項看看，我們的偏好有多接近</h3>
+                        <p>將你的作答與出題者設定的偏好比較：10 分為一致、7 分為接近、4 分為需要協調、1 分為差異較大。</p>
+                        <div class="preference-table-wrap" role="region" aria-label="13 個旅遊面向的偏好比較" tabindex="0">
+                            <table class="preference-table">
+                                <thead><tr><th scope="col">旅遊面向</th><th scope="col">你的選擇</th><th scope="col">出題者偏好</th><th scope="col">接近程度</th></tr></thead>
+                                <tbody id="preference-rows"></tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <div class="result-actions">
+                        <button class="primary-btn" id="restart-btn">再測一次 <span>↻</span></button>
+                        <button class="secondary-btn" id="share-btn">複製結果圖片</button>
+                        <!-- 旅遊守則暫停使用，保留供日後恢復。
+                        <button class="secondary-btn" id="rules-btn">我的旅遊守則</button>
+                        -->
+                    </div>
+                    <p class="fine-print" id="share-status">可以把這份結果分享給一起旅行的朋友。</p>
+                </section>
+            </main>
 
-      <footer class="footer"><span>© 2026 TRIP TEST</span><span>MADE FOR FRIENDS WHO TRAVEL TOGETHER</span></footer>
-    </div>
-    <script src="script.js?v=8"></script>
-  </body>
+            <footer class="footer"><span>© 2026 TRIP TEST</span><span>MADE FOR FRIENDS WHO TRAVEL TOGETHER</span></footer>
+        </div>
+        <!-- 旅遊守則暫停使用，保留供日後恢復。
+        <dialog class="rules-dialog" id="rules-dialog" aria-labelledby="rules-title">
+            <div class="rules-header">
+                <span class="eyebrow">MY TRAVEL RULES</span><button class="back-btn" id="rules-close-btn" aria-label="關閉旅遊守則" autofocus>關閉 ✕</button>
+            </div>
+            <h2 id="rules-title">我的旅遊守則</h2>
+            <div class="rules-content" id="rules-content">
+                <p class="rules-intro">一起出發前，先認識我的旅行習慣。這些是我的偏好，也歡迎出發前一起討論彼此舒服的方式。</p>
+                <section>
+                    <h3>01 · 行程安排</h3>
+                    <p><strong>我喜歡</strong>先排好重要景點和大方向，順序與細節可以現場調整。</p>
+                    <p><strong>我不喜歡</strong>完全不參與安排，只等別人決定所有事情。</p>
+                </section>
+                <section>
+                    <h3>02 · 交通與沿線散策</h3>
+                    <p><strong>我喜歡</strong>大致確認班次和停留點，再依現場狀況調整怎麼逛。</p>
+                    <p><strong>我不喜歡</strong>搭上車才開始想去哪，完全沒有先考慮沿途安排。</p>
+                </section>
+                <section>
+                    <h3>03 · 時間觀念</h3>
+                    <p><strong>我喜歡</strong>大家顧好約定時間；真的遲到要提早通知，一起調整後續行程。</p>
+                    <p><strong>我不喜歡</strong>把錯過預約或班次當成無所謂。我可能不會立刻說，但心裡會在意。</p>
+                </section>
+                <section>
+                    <h3>04 · 旅費與預算</h3>
+                    <p><strong>我喜歡</strong>大筆支出先取得共識，小額花費輪流或大致平衡；值得的舒適與體驗可以多花一點。</p>
+                    <p><strong>我不喜歡</strong>只為了壓低價格，犧牲原本想要的體驗。</p>
+                </section>
+                <section>
+                    <h3>05 · 吃飯怎麼選</h3>
+                    <p><strong>我喜歡</strong>輪流選餐廳，這餐配合你，下餐換我；也可以一起討論或投票。</p>
+                    <p><strong>我不喜歡</strong>一個人堅持吃自己想吃的，要求所有人都配合。</p>
+                </section>
+                <section>
+                    <h3>06 · 個人空間</h3>
+                    <p><strong>我喜歡</strong>住宿有明確的個人空間，也能安排半天或一天各自行動。</p>
+                    <p><strong>我不喜歡</strong>從早餐到睡前都必須黏在一起，沒有獨處和充電的時間。</p>
+                </section>
+                <section>
+                    <h3>07 · 費力或不方便的景點</h3>
+                    <p><strong>我喜歡</strong>旅伴真的重視的景點，可以先確認體力、路線和回程再一起完成；不同行也能約好會合。</p>
+                    <p><strong>我不喜歡</strong>因為自己興趣不高或覺得麻煩，就要求兩個人一起取消。</p>
+                </section>
+                <section>
+                    <h3>08 · 慢旅行與散策</h3>
+                    <p><strong>我喜歡</strong>逛街巷、看地方店家、喝咖啡，慢慢走一整天也可以是主要行程。</p>
+                    <p><strong>我不喜歡</strong>認為旅行每天一定要有知名景點，沒有打卡就不值得。</p>
+                </section>
+                <section>
+                    <h3>09 · 興趣不同的時候</h3>
+                    <p><strong>我喜歡</strong>各自去想去的地方，再約好時間地點會合；也可以協調停留時間。</p>
+                    <p><strong>我不喜歡</strong>只因為其中一人沒興趣，就直接刪掉另一人期待的景點。</p>
+                </section>
+                <section>
+                    <h3>10 · 住宿選擇</h3>
+                    <p><strong>我喜歡</strong>乾淨、安全、交通方便的住宿，也重視安靜與個人空間。</p>
+                    <p><strong>我不喜歡</strong>價格成為唯一考量，為了省錢接受太遠或條件不合適的住宿。</p>
+                </section>
+                <section>
+                    <h3>11 · 房間與共用空間</h3>
+                    <p><strong>我喜歡</strong>各自管理自己的區域，互不干涉，也不把東西放到對方的空間。</p>
+                    <p><strong>我不喜歡</strong>讓一個人默默收拾所有東西，忍著不說，最後累積不滿。</p>
+                </section>
+                <section>
+                    <h3>12 · 意見衝突</h3>
+                    <p><strong>我喜歡</strong>先冷靜一下，等情緒緩和再回來討論，找出都能接受的做法。</p>
+                    <p><strong>我不喜歡</strong>吵完就各走各的，沒有講好之後怎麼把事情談完。</p>
+                </section>
+                <section>
+                    <h3>13 · 參與感與責任</h3>
+                    <p><strong>我喜歡</strong>事前一起討論，有意見早點提出；遇到問題也一起想辦法。</p>
+                    <p><strong>我不喜歡</strong>事前不參與、現場卻一直否定安排；自己不查交通、不做決定，出問題又怪別人。</p>
+                </section>
+            </div>
+            <button class="primary-btn" id="rules-done-btn">看完了，查看結果 →</button>
+        </dialog>
+        -->
+        <script src="script.js?v=14"></script>
+    </body>
 </html>
