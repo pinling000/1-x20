@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="回答 10 個旅行情境，測看看自己是否適合成為這趟旅程的旅伴。" />
+    <title>旅伴合拍度測試</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="回到首頁"><span class="brand-mark">✦</span> TRIP TEST</a>
+        <div class="top-meta"><span class="status-dot"></span> FRIEND COMPATIBILITY LAB</div>
+      </header>
+
+      <main id="top">
+        <section class="intro" id="intro-screen">
+          <div class="eyebrow">TRAVEL FIELD TEST / 001</div>
+          <h1>你適合一起<br /><em>去旅行嗎？</em></h1>
+          <p class="intro-copy">回答 13 個旅行情境，測看看自己是否適合加入這趟旅程。</p>
+          <div class="intro-grid">
+            <div class="note-card" style="grid-column:1 / -1;transform:rotate(0)"><span>TRAVEL STYLE</span><p>散策、轉乘與旅伴默契。</p><p style="font-size:13px;line-height:1.6;margin-top:14px;font-weight:500">請回答你心目中最理想、最舒服的旅行方式。不是追求完美，而是看看彼此是否適合。</p></div>
+          </div>
+          <button class="primary-btn" id="start-btn">開始回答 <span>→</span></button>
+          <p class="fine-print">約 2 分鐘 · 結果僅供友情參考</p>
+        </section>
+
+        <section class="quiz hidden" id="quiz-screen" aria-live="polite">
+          <div class="quiz-top"><span class="eyebrow" id="question-number">TRAVEL TEST · QUESTION 01 / 13</span><span class="progress-text" id="progress-text">0%</span></div>
+          <div class="progress-bar"><span id="progress-bar-fill"></span></div>
+          <div class="question-wrap">
+            <div class="question-tag" id="question-tag">TRAVEL RHYTHM</div>
+            <h2 id="question-title">你們的第一天通常會怎麼開始？</h2>
+            <p class="question-hint" id="question-hint">選最接近你們真實相處的那一個。</p>
+            <div class="answers" id="answers"></div>
+          </div>
+          <div class="quiz-footer"><span class="keyboard-hint">TIP · 可以用數字鍵 1–4 選擇</span><button class="back-btn" id="back-btn">← 上一題</button></div>
+        </section>
+
+        <section class="result hidden" id="result-screen">
+          <div class="result-stamp">FIELD REPORT / COMPLETE</div>
+          <div class="result-score"><span class="score-label">TRIP COMPATIBILITY</span><strong id="score">86</strong><span class="score-unit">/ 100</span></div>
+          <div class="result-copy"><div class="result-kicker" id="result-kicker">THE GOLDEN DUO</div><h2 id="result-title">你們是旅行界的黃金搭檔。</h2><p id="result-description"></p><div id="attention-panel" style="margin-top:26px;border-top:1px solid var(--line);padding-top:20px"><div style="color:var(--coral);font:500 11px 'DM Mono',monospace;letter-spacing:.12em;margin-bottom:10px">DISCUSSION POINTS</div><ul id="attention-list" style="margin:0;padding-left:20px;color:#c6cad5;line-height:1.8"></ul></div></div>
+          <div class="result-details"><div><span>你們的偏好接近程度</span><strong id="detail-sync">大多數偏好一致</strong></div><div><span>比較適合的旅行方式</span><strong id="detail-trip">步調彈性的共同旅行</strong></div><div><span>出發前最需要先講好</span><strong id="detail-warning">分配規劃與住宿任務</strong></div></div>
+          <div class="result-actions"><button class="primary-btn" id="restart-btn">再測一次 <span>↻</span></button><button class="secondary-btn" id="share-btn">複製結果圖片</button></div>
+          <p class="fine-print" id="share-status">可以把這份結果分享給一起旅行的朋友。</p>
+        </section>
+      </main>
+
+      <footer class="footer"><span>© 2026 TRIP TEST</span><span>MADE FOR FRIENDS WHO TRAVEL TOGETHER</span></footer>
+    </div>
+    <script src="script.js?v=8"></script>
+  </body>
+</html>
